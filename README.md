@@ -1,4 +1,4 @@
-# ledgr/utils
+# ledgr/utils [![Code Coverage](https://scrutinizer-ci.com/g/ledgr/utils/badges/coverage.png?s=10688a21f9db3f923454ca718349f1866751bff9)](https://scrutinizer-ci.com/g/ledgr/utils/)
 
 Ledgr utility classes
 
