@@ -1,0 +1,22 @@
+{
+    "name": "ledgr/utils",
+    "description": "Ledgr utility classes",
+    "keywords": ["Modulo10", "Modulo11", "Transaction amount"],
+    "homepage": "https://github.com/ledgr/utils",
+    "type": "library",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Hannes Forsgård",
+            "email": "hannes.forsgard@fripost.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ledgr\\utils\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
