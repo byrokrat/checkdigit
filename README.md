@@ -1,4 +1,4 @@
-# ledgr/utils [![Build Status](https://travis-ci.org/ledgr/utils.png?branch=1.0.0)](https://travis-ci.org/ledgr/utils) [![Code Coverage](https://scrutinizer-ci.com/g/ledgr/utils/badges/coverage.png?s=10688a21f9db3f923454ca718349f1866751bff9)](https://scrutinizer-ci.com/g/ledgr/utils/)
+# ledgr/utils [![Latest Stable Version](https://poser.pugx.org/ledgr/utils/v/stable.png)](https://packagist.org/packages/ledgr/utils) [![Build Status](https://travis-ci.org/ledgr/utils.png?branch=1.0.0)](https://travis-ci.org/ledgr/utils) [![Code Coverage](https://scrutinizer-ci.com/g/ledgr/utils/badges/coverage.png?s=10688a21f9db3f923454ca718349f1866751bff9)](https://scrutinizer-ci.com/g/ledgr/utils/)
 
 
 Ledgr utility classes
