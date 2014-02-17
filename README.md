@@ -4,8 +4,8 @@
 Ledgr utility classes
 
  * [Amount](/src/Amount.php) represent transaction amounts using bcmath for arithmetic precision
- * [Modulo10](/src/Modulo10.php) calculate and validate Modulo10 check digits
- * [Modulo11](/src/Modulo11.php) calculate and validate Modulo11 check digits
+ * [Modulo10](/src/Modulo10.php) static methods to calculate and validate Modulo10 check digits
+ * [Modulo11](/src/Modulo11.php) static methods to calculate and validate Modulo11 check digits
 
 **License**: [GPL](/LICENSE)
 
