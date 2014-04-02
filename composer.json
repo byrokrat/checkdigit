@@ -1,8 +1,8 @@
 {
-    "name": "ledgr/utils",
-    "description": "Ledgr utility classes",
-    "keywords": ["Modulo10", "Modulo11", "Transaction amount"],
-    "homepage": "https://github.com/ledgr/utils",
+    "name": "ledgr/checkdigit",
+    "description": "Helper classes to calculate and validate checkdigits",
+    "keywords": ["Modulo10", "Modulo11", "Check digit"],
+    "homepage": "https://github.com/ledgr/checkdigit",
     "type": "library",
     "license": "GPL",
     "authors": [
@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ledgr\\utils\\": "src/"
+            "ledgr\\checkdigit\\": "src/"
         }
     },
     "require": {

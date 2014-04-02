@@ -1,9 +1,8 @@
-# ledgr/utils [![Latest Stable Version](https://poser.pugx.org/ledgr/utils/v/stable.png)](https://packagist.org/packages/ledgr/utils) [![Build Status](https://travis-ci.org/ledgr/utils.png?branch=1.0.0)](https://travis-ci.org/ledgr/utils) [![Code Coverage](https://scrutinizer-ci.com/g/ledgr/utils/badges/coverage.png?s=10688a21f9db3f923454ca718349f1866751bff9)](https://scrutinizer-ci.com/g/ledgr/utils/)
+# ledgr/checkdigit
 
 
-Ledgr utility classes
+Helper classes to calculate and validate checkdigits.
 
- * [Amount](/src/Amount.php) represent transaction amounts using bcmath for arithmetic precision
  * [Modulo10](/src/Modulo10.php) static methods to calculate and validate Modulo10 check digits
  * [Modulo11](/src/Modulo11.php) static methods to calculate and validate Modulo11 check digits
 
@@ -12,11 +11,11 @@ Ledgr utility classes
 
 Installation using [composer](http://getcomposer.org/)
 ------------------------------------------------------
-Simply add `ledgr/utils` to your list of required libraries.
+Simply add `ledgr/checkdigit` to your list of required libraries.
 
 
 Run tests using [phpunit](http://phpunit.de/)
 ---------------------------------------------
 From project root simply type
 
-    > phpunit
+    $ phpunit
