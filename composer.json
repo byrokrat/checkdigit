@@ -4,7 +4,7 @@
     "keywords": ["Modulo10", "Modulo11", "Check digit"],
     "homepage": "https://github.com/ledgr/checkdigit",
     "type": "library",
-    "license": "GPL",
+    "license": "WTFPL",
     "authors": [
         {
             "name": "Hannes Forsgård",

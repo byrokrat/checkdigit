@@ -6,8 +6,6 @@ Helper classes to calculate and validate checkdigits.
  * [Modulo10](/src/Modulo10.php) static methods to calculate and validate Modulo10 check digits
  * [Modulo11](/src/Modulo11.php) static methods to calculate and validate Modulo11 check digits
 
-**License**: [GPL](/LICENSE)
-
 
 Installation using [composer](http://getcomposer.org/)
 ------------------------------------------------------
