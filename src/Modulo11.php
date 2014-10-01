@@ -14,23 +14,19 @@ namespace ledgr\checkdigit;
  *
  * @author Hannes Forsgård <hannes.forsgard@fripost.org>
  */
-class Modulo11
+class Modulo11 implements Calculator
 {
     /**
-     * Verify that the last digit of nr is a valid check digit
-     *
-     * @param  string                    $nr
-     * @return bool
-     * @throws InvalidStructureException If nr is invalid
+     * Check if the last digit of number is a valid modulo 11 check digit
      */
-    public static function verify($nr)
+    public function isValid($number)
     {
-        if (!is_string($nr) || !preg_match("/^[0-9]*X?$/", $nr) || strlen($nr) < 1) {
+        if (!is_string($number) || !preg_match("/^[0-9]*X?$/", $number) || strlen($number) < 1) {
             throw new InvalidStructureException("Number must consist of characters 0-9 and optionally end with X");
         }
 
         $weight = 0;
-        $pos = strlen($nr);
+        $pos = strlen($number);
         $sum = 0;
 
         while (true) {
@@ -45,7 +41,7 @@ class Modulo11
                 $weight = 1;
             }
             // Add to sum
-            $n = $nr[$pos];
+            $n = $number[$pos];
             if ($n == 'X') {
                 $n = 10;
             }
@@ -57,20 +53,16 @@ class Modulo11
     }
 
     /**
-     * Calculate check digit for nr
-     *
-     * @param  string                    $nr
-     * @return string
-     * @throws InvalidStructureException If nr is not numerical
+     * Calculate the modulo 11 check digit for number
      */
-    public static function getCheckDigit($nr)
+    public function calculateCheckDigit($number)
     {
-        if (!is_string($nr) || !ctype_digit($nr)) {
+        if (!is_string($number) || !ctype_digit($number)) {
             throw new InvalidStructureException("Number must consist of characters 0-9");
         }
 
         $weight = 1;
-        $pos = strlen($nr);
+        $pos = strlen($number);
         $sum = 0;
 
         while (true) {
@@ -85,7 +77,7 @@ class Modulo11
                 $weight = 1;
             }
             // Add to sum
-            $n = $nr[$pos];
+            $n = $number[$pos];
             $sum += $n * $weight;
         }
 

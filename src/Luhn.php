@@ -10,10 +10,10 @@
 namespace ledgr\checkdigit;
 
 /**
- * Base exception, all thrown exceptions implements this interface
+ * Luhn works as an alternative name to Modulo10
  *
  * @author Hannes Forsgård <hannes.forsgard@fripost.org>
  */
-interface Exception
+class Luhn extends Modulo10
 {
 }

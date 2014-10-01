@@ -4,77 +4,71 @@ namespace ledgr\checkdigit;
 
 class Modulo11Test extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @expectedException ledgr\checkdigit\InvalidStructureException
-     * @dataProvider testVerifyStructureProvider
-     */
-    public function testVerifyStructure($nr)
+    public function invalidStructureProviderIsValid()
     {
-        $m = new Modulo11();
-        $m->verify($nr);
-    }
-
-    public function testVerifyStructureProvider()
-    {
-        return array(
-            array('y'),
-            array(''),
-            array('1234x'),
-            array('X2'),
-            array(1234),
-            array('1234.234'),
-        );
-    }
-
-    public function testVerify()
-    {
-        $m = new Modulo11();
-
-        // Valid check digits
-        $this->assertTrue($m->verify('0365327'));
-        $this->assertTrue($m->verify('3928444042'));
-        $this->assertTrue($m->verify('0131391399'));
-        $this->assertTrue($m->verify('007007013X'));
-        $this->assertTrue($m->verify('013139139119'));
-        $this->assertTrue($m->verify('0365300'));
-
-        // Invalid ckeck digits
-        $this->assertFalse($m->verify('0365321'));
-        $this->assertFalse($m->verify('3928444041'));
-        $this->assertFalse($m->verify('0131391391'));
-        $this->assertFalse($m->verify('0070070131'));
+        return [
+            ['y'],
+            [''],
+            ['1234x'],
+            ['X2'],
+            [1234],
+            ['1234.234']
+        ];
     }
 
     /**
      * @expectedException ledgr\checkdigit\InvalidStructureException
-     * @dataProvider testGetCheckDigitStructureProvider
+     * @dataProvider invalidStructureProviderIsValid
      */
-    public function testGetCheckDigitStructure($nr)
+    public function testInvalidStructureIsValid($number)
     {
-        $m = new Modulo11();
-        $m->getCheckDigit($nr);
+        (new Modulo11)->isValid($number);
     }
 
-    public function testGetCheckDigitStructureProvider()
+    public function testIsValid()
     {
-        return array(
-            array('y'),
-            array(''),
-            array('X2'),
-            array(1234),
-            array('123X'),
-            array('1234.234'),
-        );
+        $modulo11 = new Modulo11();
+        $this->assertTrue($modulo11->isValid('0365327'));
+        $this->assertTrue($modulo11->isValid('3928444042'));
+        $this->assertTrue($modulo11->isValid('0131391399'));
+        $this->assertTrue($modulo11->isValid('007007013X'));
+        $this->assertTrue($modulo11->isValid('013139139119'));
+        $this->assertTrue($modulo11->isValid('0365300'));
+        $this->assertFalse($modulo11->isValid('0365321'));
+        $this->assertFalse($modulo11->isValid('3928444041'));
+        $this->assertFalse($modulo11->isValid('0131391391'));
+        $this->assertFalse($modulo11->isValid('0070070131'));
     }
 
-    public function testGetCheckDigit()
+    public function invalidStructureProviderCalculateCheckDigit()
     {
-        $m = new Modulo11();
-        $this->assertEquals($m->getCheckDigit('036532'), '7');
-        $this->assertEquals($m->getCheckDigit('392844404'), '2');
-        $this->assertEquals($m->getCheckDigit('013139139'), '9');
-        $this->assertEquals($m->getCheckDigit('01313913911'), '9');
-        $this->assertEquals($m->getCheckDigit('007007013'), 'X');
-        $this->assertEquals($m->getCheckDigit('036530'), '0');
+        return [
+            ['y'],
+            [''],
+            ['X2'],
+            [1234],
+            ['123X'],
+            ['1234.234']
+        ];
+    }
+
+    /**
+     * @expectedException ledgr\checkdigit\InvalidStructureException
+     * @dataProvider invalidStructureProviderCalculateCheckDigit
+     */
+    public function testInvalidStructureCalculateCheckDigit($number)
+    {
+        (new Modulo11)->calculateCheckDigit($number);
+    }
+
+    public function testCalculateCheckDigit()
+    {
+        $modulo11 = new Modulo11();
+        $this->assertSame('7', $modulo11->calculateCheckDigit('036532'));
+        $this->assertSame('2', $modulo11->calculateCheckDigit('392844404'));
+        $this->assertSame('9', $modulo11->calculateCheckDigit('013139139'));
+        $this->assertSame('9', $modulo11->calculateCheckDigit('01313913911'));
+        $this->assertSame('X', $modulo11->calculateCheckDigit('007007013'));
+        $this->assertSame('0', $modulo11->calculateCheckDigit('036530'));
     }
 }

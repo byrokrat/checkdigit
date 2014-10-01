@@ -1,7 +1,7 @@
 {
     "name": "ledgr/checkdigit",
-    "description": "Helper classes to calculate and validate checkdigits",
-    "keywords": ["Modulo10", "Modulo11", "Check digit"],
+    "description": "Helper classes to calculate and validate ckecksums",
+    "keywords": ["modulo 10", "luhn" "modulo 11", "modulo 97","check digit", "ckecksum"],
     "homepage": "https://github.com/ledgr/checkdigit",
     "type": "library",
     "license": "WTFPL",
@@ -17,6 +17,6 @@
         }
     },
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.4"
     }
 }

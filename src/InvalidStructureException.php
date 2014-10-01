@@ -9,11 +9,11 @@
 
 namespace ledgr\checkdigit;
 
-use InvalidArgumentException;
-
 /**
+ * Exception thrown if the structure of the validated number is invalid
+ *
  * @author Hannes Forsgård <hannes.forsgard@fripost.org>
  */
-class InvalidStructureException extends InvalidArgumentException implements Exception
+class InvalidStructureException extends \InvalidArgumentException implements Exception
 {
 }

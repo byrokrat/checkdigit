@@ -14,47 +14,34 @@ namespace ledgr\checkdigit;
  *
  * @author Hannes Forsgård <hannes.forsgard@fripost.org>
  */
-class Modulo10
+class Modulo10 implements Calculator
 {
     /**
-     * Verify that the last digit of nr is a valid check digit
-     *
-     * @param  string                    $nr
-     * @return bool
-     * @throws InvalidStructureException If nr is not numerical
+     * Check if the last digit of number is a valid modulo 10 check digit
      */
-    public static function verify($nr)
+    public function isValid($number)
     {
-        if (!is_string($nr) || !ctype_digit($nr)) {
-            throw new InvalidStructureException("Number must consist of characters 0-9");
-        }
-
-        $check = substr($nr, -1);
-        $nr = substr($nr, 0, strlen($nr)-1);
-
-        return $check == self::getCheckDigit($nr);
+        return substr($number, -1) === $this->calculateCheckDigit(substr($number, 0, -1));
     }
 
     /**
-     * Calculate check digit for nr
-     *
-     * @param  string                    $nr
-     * @return string
-     * @throws InvalidStructureException If nr is not numerical
+     * Calculate the modulo 10 check digit for number
      */
-    public static function getCheckDigit($nr)
+    public function calculateCheckDigit($number)
     {
-        if (!is_string($nr) || !ctype_digit($nr)) {
-            throw new InvalidStructureException("Number must consist of characters 0-9");
+        if (!ctype_digit($number)) {
+            throw new InvalidStructureException(
+                "Number can only contain numerical characters, using <$number>"
+            );
         }
 
-        $n = 2;
+        $weight = 2;
         $sum = 0;
 
-        for ($i=strlen($nr)-1; $i>=0; $i--) {
-            $tmp = $nr[$i] * $n;
-            ($tmp > 9) ? $sum += 1 + ($tmp % 10) : $sum += $tmp;
-            ($n == 2) ? $n = 1 : $n = 2;
+        for ($pos=strlen($number)-1; $pos>=0; $pos--) {
+            $tmp = $number[$pos] * $weight;
+            $sum += ($tmp > 9) ? (1 + ($tmp % 10)) : $tmp;
+            $weight = ($weight == 2) ? 1 : 2;
         }
 
         $ceil = $sum;
@@ -63,8 +50,6 @@ class Modulo10
             $ceil++;
         }
 
-        $check = $ceil-$sum;
-
-        return (string)$check;
+        return (string)($ceil-$sum);
     }
 }
