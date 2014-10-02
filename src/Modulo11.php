@@ -17,35 +17,43 @@ namespace ledgr\checkdigit;
 class Modulo11 implements Calculator
 {
     /**
+     * @var array Map modulo 11 remainder to check digit
+     */
+    private static $remainderToCheck = [
+        0 => '0',
+        1 => '1',
+        2 => '2',
+        3 => '3',
+        4 => '4',
+        5 => '5',
+        6 => '6',
+        7 => '7',
+        8 => '8',
+        9 => '9',
+        10 => 'X',
+        11 => '0',
+    ];
+
+    /**
      * Check if the last digit of number is a valid modulo 11 check digit
+     *
+     * @param  string $number
+     * @return bool
+     * @throws InvalidStructureException If $number is not valid
      */
     public function isValid($number)
     {
-        if (!is_string($number) || !preg_match("/^[0-9]*X?$/", $number) || strlen($number) < 1) {
-            throw new InvalidStructureException("Number must consist of characters 0-9 and optionally end with X");
+        if (!preg_match("/^\d*(X|\d){1}$/", $number)) {
+            throw new InvalidStructureException(
+                "Number must consist of characters 0-9 and optionally end with X"
+            );
         }
 
-        $weight = 0;
-        $pos = strlen($number);
         $sum = 0;
 
-        while (true) {
-            // Set string position
-            $pos--;
-            if ($pos < 0) {
-                break;
-            }
-            // Set weight
-            $weight++;
-            if ($weight > 10) {
-                $weight = 1;
-            }
-            // Add to sum
-            $n = $number[$pos];
-            if ($n == 'X') {
-                $n = 10;
-            }
-            $sum += $n * $weight;
+        foreach (array_reverse(str_split($number)) as $pos => $digit) {
+            $digit = ($digit == 'X') ? 10 : $digit;
+            $sum += $digit * $this->getWeight($pos);
         }
 
         // If remainder is 0 check digit is valid
@@ -54,46 +62,40 @@ class Modulo11 implements Calculator
 
     /**
      * Calculate the modulo 11 check digit for number
+     *
+     * @param  string $number
+     * @return string
+     * @throws InvalidStructureException If $number is not valid
      */
     public function calculateCheckDigit($number)
     {
-        if (!is_string($number) || !ctype_digit($number)) {
+        if (!ctype_digit($number)) {
             throw new InvalidStructureException("Number must consist of characters 0-9");
         }
 
-        $weight = 1;
-        $pos = strlen($number);
         $sum = 0;
 
-        while (true) {
-            // Set string position
-            $pos--;
-            if ($pos < 0) {
-                break;
-            }
-            // Set weight
-            $weight++;
-            if ($weight > 10) {
-                $weight = 1;
-            }
-            // Add to sum
-            $n = $number[$pos];
-            $sum += $n * $weight;
+        foreach (array_reverse(str_split($number)) as $pos => $digit) {
+            $sum += $digit * $this->getWeight($pos, 2);
         }
 
         // Calculate check digit from remainder
-        $rest = $sum % 11;
-        $check = 11 - $rest;
-        $check = (string)$check;
+        return self::$remainderToCheck[11 - $sum % 11];
+    }
 
-        if ($check == '10') {
-            $check = 'X';
+    /**
+     * Calculate weight based on position in number
+     *
+     * @param  int $pos   Position in number (starts from 0)
+     * @param  int $start Start value for weight calculation (value of position 0)
+     * @return int
+     */
+    private function getWeight($pos, $start = 1)
+    {
+        $pos += $start;
+        while ($pos > 10) {
+            $pos -= 10;
         }
-
-        if ($check == '11') {
-            $check = '0';
-        }
-
-        return $check;
+        return $pos;
     }
 }

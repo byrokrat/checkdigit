@@ -1,7 +1,7 @@
 {
     "name": "ledgr/checkdigit",
     "description": "Helper classes to calculate and validate ckecksums",
-    "keywords": ["modulo 10", "luhn" "modulo 11", "modulo 97","check digit", "ckecksum"],
+    "keywords": ["modulo 10", "luhn", "modulo 11", "modulo 97","check digit"],
     "homepage": "https://github.com/ledgr/checkdigit",
     "type": "library",
     "license": "WTFPL",
@@ -17,6 +17,7 @@
         }
     },
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "ext-bcmath": "*"
     }
 }

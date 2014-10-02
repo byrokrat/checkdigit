@@ -11,7 +11,6 @@ class Modulo11Test extends \PHPUnit_Framework_TestCase
             [''],
             ['1234x'],
             ['X2'],
-            [1234],
             ['1234.234']
         ];
     }
@@ -46,7 +45,6 @@ class Modulo11Test extends \PHPUnit_Framework_TestCase
             ['y'],
             [''],
             ['X2'],
-            [1234],
             ['123X'],
             ['1234.234']
         ];

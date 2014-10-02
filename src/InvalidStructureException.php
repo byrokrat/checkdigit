@@ -10,7 +10,7 @@
 namespace ledgr\checkdigit;
 
 /**
- * Exception thrown if the structure of the validated number is invalid
+ * Exception thrown if the structure of the processed number is invalid
  *
  * @author Hannes Forsgård <hannes.forsgard@fripost.org>
  */
