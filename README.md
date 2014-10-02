@@ -13,8 +13,8 @@ Api
 ---
 The [`Calculator`](/src/Calculator.php) interface defines two methods:
 
- * `isValid(string $number) : bool` checks if number contains a valid check digit
- * `calculateCheckDigit(string $number) : string` calculates the check digit for number
+ * `isValid(string $number) : bool` checks if number contains a valid check digit.
+ * `calculateCheckDigit(string $number) : string` calculates the check digit for number.
 
 Implementations include:
 

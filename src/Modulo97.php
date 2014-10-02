@@ -25,13 +25,7 @@ class Modulo97 implements Calculator
      */
     public function isValid($number)
     {
-        if (!ctype_digit($number)) {
-            throw new InvalidStructureException(
-                "Number can only contain numerical characters, found <$number>"
-            );
-        }
-
-        return bcmod($number, 97) === '1';
+        return bcmod($this->readNumber($number), 97) === '1';
     }
 
     /**
@@ -43,12 +37,23 @@ class Modulo97 implements Calculator
      */
     public function calculateCheckDigit($number)
     {
+        return (string)(98 - bcmod($this->readNumber($number).'00', 97));
+    }
+
+    /**
+     * Validate number sructure, returns number if structure is valid
+     *
+     * @param  string $number
+     * @return string
+     * @throws InvalidStructureException If $number is not valid
+     */
+    private function readNumber($number)
+    {
         if (!ctype_digit($number)) {
             throw new InvalidStructureException(
                 "Number can only contain numerical characters, found <$number>"
             );
         }
-
-        return (string)(98 - bcmod($number.'00', 97));
+        return $number;
     }
 }
