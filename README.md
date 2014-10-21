@@ -1,13 +1,16 @@
 # ledgr/checkdigit
 
-[![Latest Stable Version](https://poser.pugx.org/ledgr/checkdigit/v/stable.png)](https://packagist.org/packages/ledgr/checkdigit)
-[![Build Status](https://travis-ci.org/ledgr/checkdigit.svg?branch=1.0.0)](https://travis-ci.org/ledgr/checkdigit)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ledgr/checkdigit/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ledgr/checkdigit/?branch=master)
+[![Packagist Version](https://img.shields.io/packagist/v/ledgr/checkdigit.svg?style=flat-square)](https://packagist.org/packages/ledgr/checkdigit)
+[![Build Status](https://img.shields.io/travis/ledgr/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/ledgr/checkdigit)
+[![Quality Score](https://img.shields.io/scrutinizer/g/ledgr/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/ledgr/checkdigit)
+[![Dependency Status](https://img.shields.io/gemnasium/ledgr/checkdigit.svg?style=flat-square)](https://gemnasium.com/ledgr/checkdigit)
 
 Helper classes to calculate and validate checkdigits.
 
-> Install using [composer](http://getcomposer.org/). Exists as **ledgr/checkdigit** in
-> the packagist repository.
+> Install using **[composer](http://getcomposer.org/)**. Exists as
+> **[ledgr/checkdigit](https://packagist.org/packages/ledgr/checkdigit)**
+> in the **[packagist](https://packagist.org/)** repository.
+
 
 Api
 ---
