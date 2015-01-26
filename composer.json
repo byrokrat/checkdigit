@@ -1,8 +1,8 @@
 {
-    "name": "ledgr/checkdigit",
+    "name": "byrokrat/checkdigit",
     "description": "Helper classes to calculate and validate ckecksums",
     "keywords": ["modulo 10", "luhn", "modulo 11", "modulo 97","check digit"],
-    "homepage": "https://github.com/ledgr/checkdigit",
+    "homepage": "https://github.com/byrokrat/checkdigit",
     "type": "library",
     "license": "WTFPL",
     "authors": [
@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ledgr\\checkdigit\\": "src/"
+            "byrokrat\\checkdigit\\": "src/"
         }
     },
     "require": {

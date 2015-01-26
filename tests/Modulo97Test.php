@@ -1,6 +1,6 @@
 <?php
 
-namespace ledgr\checkdigit;
+namespace byrokrat\checkdigit;
 
 class Modulo97Test extends \PHPUnit_Framework_TestCase
 {
@@ -16,20 +16,20 @@ class Modulo97Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException ledgr\checkdigit\InvalidStructureException
      * @dataProvider invalidStructureProvider
      */
     public function testInvalidStructureIsValid($number)
     {
+        $this->setExpectedException('byrokrat\checkdigit\InvalidStructureException');
         (new Modulo97)->isValid($number);
     }
 
     /**
-     * @expectedException ledgr\checkdigit\InvalidStructureException
      * @dataProvider invalidStructureProvider
      */
     public function testInvalidStructureCalculateCheckDigit($number)
     {
+        $this->setExpectedException('byrokrat\checkdigit\InvalidStructureException');
         (new Modulo97)->calculateCheckDigit($number);
     }
 

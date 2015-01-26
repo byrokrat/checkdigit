@@ -1,6 +1,6 @@
 <?php
 
-namespace ledgr\checkdigit;
+namespace byrokrat\checkdigit;
 
 class LuhnTest extends \PHPUnit_Framework_TestCase
 {

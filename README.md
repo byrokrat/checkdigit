@@ -1,16 +1,20 @@
-# ledgr/checkdigit
+Checkdigit
+==========
 
-[![Packagist Version](https://img.shields.io/packagist/v/ledgr/checkdigit.svg?style=flat-square)](https://packagist.org/packages/ledgr/checkdigit)
-[![Build Status](https://img.shields.io/travis/ledgr/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/ledgr/checkdigit)
-[![Quality Score](https://img.shields.io/scrutinizer/g/ledgr/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/ledgr/checkdigit)
-[![Dependency Status](https://img.shields.io/gemnasium/ledgr/checkdigit.svg?style=flat-square)](https://gemnasium.com/ledgr/checkdigit)
+Helper classes to calculate and validate ckecksums.
 
-Helper classes to calculate and validate checkdigits.
+[![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
+[![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
+[![Quality Score](https://img.shields.io/scrutinizer/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit)
+[![Dependency Status](https://img.shields.io/gemnasium/byrokrat/checkdigit.svg?style=flat-square)](https://gemnasium.com/byrokrat/checkdigit)
 
-> Install using **[composer](http://getcomposer.org/)**. Exists as
-> **[ledgr/checkdigit](https://packagist.org/packages/ledgr/checkdigit)**
-> in the **[packagist](https://packagist.org/)** repository.
+Installation
+------------
+Install using [composer](http://getcomposer.org/). Exists as
+[byrokrat/checkdigit](https://packagist.org/packages/byrokrat/checkdigit)
+in the packagist repository.
 
+    composer require byrokrat/checkdigit
 
 Api
 ---
@@ -29,9 +33,15 @@ Implementations include:
 Usage
 -----
 ```php
-use ledgr\checkdigit\Luhn;
+use byrokrat\checkdigit\Luhn;
 $luhn = new Luhn();
 $luhn->isValid('55555551');            // true
 $luhn->isValid('55555550');            // false
 $luhn->calculateCheckDigit('5555555'); // '1'
 ```
+
+Credits
+-------
+Checkdigit is covered under the [WTFPL](http://www.wtfpl.net/) license.
+
+@author Hannes Forsgård (hannes.forsgard@fripost.org)
