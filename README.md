@@ -4,9 +4,10 @@ Checkdigit
 [![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
 [![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
 [![Quality Score](https://img.shields.io/scrutinizer/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit)
+[![Coveralls](https://img.shields.io/coveralls/byrokrat/checkdigit.svg?style=flat-square)](https://coveralls.io/r/byrokrat/checkdigit)
 [![Dependency Status](https://img.shields.io/gemnasium/byrokrat/checkdigit.svg?style=flat-square)](https://gemnasium.com/byrokrat/checkdigit)
 
-Helper classes to calculate and validate ckecksums.
+Helper classes to calculate and validate ckecksums
 
 Installation
 ------------
