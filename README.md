@@ -1,18 +1,18 @@
 Checkdigit
 ==========
 
-Helper classes to calculate and validate ckecksums.
-
 [![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
 [![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
 [![Quality Score](https://img.shields.io/scrutinizer/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit)
 [![Dependency Status](https://img.shields.io/gemnasium/byrokrat/checkdigit.svg?style=flat-square)](https://gemnasium.com/byrokrat/checkdigit)
 
+Helper classes to calculate and validate ckecksums.
+
 Installation
 ------------
 Install using [composer](http://getcomposer.org/). Exists as
 [byrokrat/checkdigit](https://packagist.org/packages/byrokrat/checkdigit)
-in the packagist repository.
+in the [packagist](https://packagist.org/) repository.
 
     composer require byrokrat/checkdigit
 
@@ -42,6 +42,6 @@ $luhn->calculateCheckDigit('5555555'); // '1'
 
 Credits
 -------
-Checkdigit is covered under the [WTFPL](http://www.wtfpl.net/) license.
+Checkdigit is covered under the [WTFPL](http://www.wtfpl.net/).
 
 @author Hannes Forsgård (hannes.forsgard@fripost.org)
