@@ -9,8 +9,12 @@ php:
 install:
   - composer install --dev --prefer-source
 
+befor_script:
+  - composer require satooshi/php-coveralls
+  - mkdir -p build/logs
+
 script:
-  - phpunit --coverage-clover clover.xml
+  - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - php vendor/bin/coveralls
