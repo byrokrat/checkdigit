@@ -81,7 +81,7 @@ class Modulo11 implements Calculator
      * @param  int $start Start value for weight calculation (value of position 0)
      * @return int
      */
-    private function getWeight($pos, $start = 1)
+    protected function getWeight($pos, $start = 1)
     {
         $pos += $start;
         while ($pos > 10) {
