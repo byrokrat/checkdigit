@@ -15,7 +15,7 @@ Install using [composer](http://getcomposer.org/). Exists as
 [byrokrat/checkdigit](https://packagist.org/packages/byrokrat/checkdigit)
 in the [packagist](https://packagist.org/) repository.
 
-    composer require byrokrat/checkdigit
+    composer require byrokrat/checkdigit:~1.0
 
 Api
 ---
