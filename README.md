@@ -1,5 +1,5 @@
-Checkdigit
-==========
+Byrokrat.Checkdigit
+===================
 
 [![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
 [![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
@@ -7,17 +7,14 @@ Checkdigit
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit/?branch=master)
 [![Dependency Status](https://img.shields.io/gemnasium/byrokrat/checkdigit.svg?style=flat-square)](https://gemnasium.com/byrokrat/checkdigit)
 
-Helper classes to calculate and validate ckecksums
+Helper classes to calculate and validate ckecksums.
 
 Installation
 ------------
-Install using [composer](http://getcomposer.org/). Exists as
-[byrokrat/checkdigit](https://packagist.org/packages/byrokrat/checkdigit)
-in the [packagist](https://packagist.org/) repository.
 
-    composer require byrokrat/checkdigit:~1.0
+    composer require byrokrat/checkdigit:^1.0
 
-Api
+API
 ---
 The [`Calculator`](/src/Calculator.php) interface defines two methods:
 
@@ -33,12 +30,20 @@ Implementations include:
 
 Usage
 -----
+<!-- @expectOutput 11 -->
 ```php
 use byrokrat\checkdigit\Luhn;
+
 $luhn = new Luhn();
-$luhn->isValid('55555551');            // true
-$luhn->isValid('55555550');            // false
-$luhn->calculateCheckDigit('5555555'); // '1'
+
+// outputs '1' (true)
+echo $luhn->isValid('55555551');
+
+// outputs '' (false)
+echo $luhn->isValid('55555550');
+
+// outputs '1'
+echo $luhn->calculateCheckDigit('5555555');
 ```
 
 Credits
