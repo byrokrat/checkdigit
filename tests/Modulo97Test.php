@@ -2,7 +2,7 @@
 
 namespace byrokrat\checkdigit;
 
-class Modulo97Test extends \PHPUnit_Framework_TestCase
+class Modulo97Test extends \PHPUnit\Framework\TestCase
 {
     public function invalidStructureProvider()
     {
@@ -20,7 +20,7 @@ class Modulo97Test extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidStructureIsValid($number)
     {
-        $this->setExpectedException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
         (new Modulo97)->isValid($number);
     }
 
@@ -29,7 +29,7 @@ class Modulo97Test extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidStructureCalculateCheckDigit($number)
     {
-        $this->setExpectedException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
         (new Modulo97)->calculateCheckDigit($number);
     }
 
