@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-- Nothing yet..
+- Require php 7.0
 
 ## [1.1.2] - 2016-08-18
 
