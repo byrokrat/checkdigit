@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace byrokrat\checkdigit;
 
 class Modulo11Test extends \PHPUnit\Framework\TestCase
@@ -20,13 +22,13 @@ class Modulo11Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureIsValid($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException(InvalidStructureException::CLASS);
         (new Modulo11)->isValid($number);
     }
 
     public function testIsValid()
     {
-        $modulo11 = new Modulo11();
+        $modulo11 = new Modulo11;
         $this->assertTrue($modulo11->isValid('0365327'));
         $this->assertTrue($modulo11->isValid('3928444042'));
         $this->assertTrue($modulo11->isValid('0131391399'));
@@ -55,13 +57,13 @@ class Modulo11Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureCalculateCheckDigit($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException(InvalidStructureException::CLASS);
         (new Modulo11)->calculateCheckDigit($number);
     }
 
     public function testCalculateCheckDigit()
     {
-        $modulo11 = new Modulo11();
+        $modulo11 = new Modulo11;
         $this->assertSame('7', $modulo11->calculateCheckDigit('036532'));
         $this->assertSame('2', $modulo11->calculateCheckDigit('392844404'));
         $this->assertSame('9', $modulo11->calculateCheckDigit('013139139'));

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace byrokrat\checkdigit;
 
 class Modulo10Test extends \PHPUnit\Framework\TestCase
@@ -18,8 +20,8 @@ class Modulo10Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureIsValid($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
-        (new Modulo10())->isValid($number);
+        $this->expectException(InvalidStructureException::CLASS);
+        (new Modulo10)->isValid($number);
     }
 
     /**
@@ -27,13 +29,13 @@ class Modulo10Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureCalculateCheckDigit($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
-        (new Modulo10())->calculateCheckDigit($number);
+        $this->expectException(InvalidStructureException::CLASS);
+        (new Modulo10)->calculateCheckDigit($number);
     }
 
     public function testIsValid()
     {
-        $modulo10 = new Modulo10();
+        $modulo10 = new Modulo10;
         $this->assertTrue($modulo10->isValid('55555551'));
         $this->assertTrue($modulo10->isValid('9912346'));
         $this->assertTrue($modulo10->isValid('9876543217'));
@@ -46,7 +48,7 @@ class Modulo10Test extends \PHPUnit\Framework\TestCase
 
     public function testCalculateCheckDigit()
     {
-        $modulo10 = new Modulo10();
+        $modulo10 = new Modulo10;
         $this->assertSame('1', $modulo10->calculateCheckDigit('5555555'));
         $this->assertSame('6', $modulo10->calculateCheckDigit('991234'));
         $this->assertSame('7', $modulo10->calculateCheckDigit('987654321'));

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace byrokrat\checkdigit;
 
 class LuhnTest extends \PHPUnit\Framework\TestCase

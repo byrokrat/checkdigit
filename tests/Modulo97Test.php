@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace byrokrat\checkdigit;
 
 class Modulo97Test extends \PHPUnit\Framework\TestCase
@@ -20,7 +22,7 @@ class Modulo97Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureIsValid($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException(InvalidStructureException::CLASS);
         (new Modulo97)->isValid($number);
     }
 
@@ -29,7 +31,7 @@ class Modulo97Test extends \PHPUnit\Framework\TestCase
      */
     public function testInvalidStructureCalculateCheckDigit($number)
     {
-        $this->expectException('byrokrat\checkdigit\InvalidStructureException');
+        $this->expectException(InvalidStructureException::CLASS);
         (new Modulo97)->calculateCheckDigit($number);
     }
 

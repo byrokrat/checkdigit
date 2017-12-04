@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace byrokrat\checkdigit;
 
 /**
@@ -28,11 +30,9 @@ class Modulo11 implements Calculator
     /**
      * Check if the last digit of number is a valid modulo 11 check digit
      *
-     * @param  string $number
-     * @return bool
      * @throws InvalidStructureException If $number is not valid
      */
-    public function isValid($number)
+    public function isValid(string $number): bool
     {
         if (!preg_match("/^\d*(X|\d){1}$/", $number)) {
             throw new InvalidStructureException(
@@ -54,11 +54,9 @@ class Modulo11 implements Calculator
     /**
      * Calculate the modulo 11 check digit for number
      *
-     * @param  string $number
-     * @return string
-     * @throws InvalidStructureException If $number is not valid
+     * @throws InvalidStructureException If $number is not numerical
      */
-    public function calculateCheckDigit($number)
+    public function calculateCheckDigit(string $number): string
     {
         if (!ctype_digit($number)) {
             throw new InvalidStructureException("Number must consist of characters 0-9");
@@ -81,12 +79,14 @@ class Modulo11 implements Calculator
      * @param  int $start Start value for weight calculation (value of position 0)
      * @return int
      */
-    protected function getWeight($pos, $start = 1)
+    protected function getWeight(int $pos, int $start = 1): int
     {
         $pos += $start;
+
         while ($pos > 10) {
             $pos -= 10;
         }
+
         return $pos;
     }
 }
