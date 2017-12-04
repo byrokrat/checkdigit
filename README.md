@@ -1,5 +1,4 @@
-Byrokrat.Checkdigit
-===================
+# Checkdigit
 
 [![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
 [![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
@@ -11,8 +10,11 @@ Helper classes to calculate and validate ckecksums.
 
 Installation
 ------------
+```shell
+composer require byrokrat/checkdigit:^1.0
+```
 
-    composer require byrokrat/checkdigit:^1.0
+Requires the [bcmath](http://php.net/manual/en/book.bc.php) extension.
 
 API
 ---
@@ -32,9 +34,7 @@ Usage
 -----
 <!-- @expectOutput 11 -->
 ```php
-use byrokrat\checkdigit\Luhn;
-
-$luhn = new Luhn();
+$luhn = new byrokrat\checkdigit\Luhn;
 
 // outputs '1' (true)
 echo $luhn->isValid('55555551');
@@ -45,9 +45,3 @@ echo $luhn->isValid('55555550');
 // outputs '1'
 echo $luhn->calculateCheckDigit('5555555');
 ```
-
-Credits
--------
-Checkdigit is covered under the [WTFPL](http://www.wtfpl.net/).
-
-@author Hannes Forsgård (hannes.forsgard@fripost.org)

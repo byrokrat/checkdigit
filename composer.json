@@ -4,7 +4,7 @@
     "keywords": ["modulo 10", "luhn", "modulo 11", "modulo 97","check digit"],
     "homepage": "https://github.com/byrokrat/checkdigit",
     "type": "library",
-    "license": "WTFPL",
+    "license": "Unlicense",
     "authors": [
         {
             "name": "Hannes Forsgård",
