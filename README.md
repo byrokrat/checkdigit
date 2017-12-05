@@ -11,7 +11,7 @@ Helper classes to calculate and validate ckecksums.
 Installation
 ------------
 ```shell
-composer require byrokrat/checkdigit:^1.0
+composer require byrokrat/checkdigit:^2
 ```
 
 Requires the [bcmath](http://php.net/manual/en/book.bc.php) extension.
@@ -20,8 +20,8 @@ API
 ---
 The [`Calculator`](/src/Calculator.php) interface defines two methods:
 
- * `isValid(string $number) : bool` checks if number contains a valid check digit.
- * `calculateCheckDigit(string $number) : string` calculates the check digit for number.
+ * `isValid(string $number): bool` checks if number contains a valid check digit.
+ * `calculateCheckDigit(string $number): string` calculates the check digit for number.
 
 Implementations include:
 

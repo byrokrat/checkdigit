@@ -7,15 +7,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Nothing...
 
-## [1.2] - 2017-12-04
+## [2.0.0] - 2017-12-05
 
 ### Changed
-- Requires php 7.0
+- Requires php 7 and strict typing.
 
 ## [1.1.2] - 2016-08-18
 
 ### Added
-- Add a .gitattributes to prevent tests and unneeded files from being included in composer installs.
+- Add a `.gitattributes` to prevent unneeded files from being included in composer installs.
 
 ## [1.1.1] - 2016-05-04
 
@@ -25,7 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.1.0] - 2016-03-02
 
 ### Added
-- Made Modulo11::getWeight() protected to support alternating implementations.
+- Made `Modulo11::getWeight()` protected to support alternating implementations.
 
 ## [1.0.0] - 2015-01-26
 - Initial release.
