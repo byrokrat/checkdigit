@@ -5,7 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-- Nothing...
+### Added
+- GTIN variant of `Modulo10` for validating barcodes like EAN, UPC, JAN, ITF and ISBN.
 
 ## [2.0.0] - 2017-12-05
 

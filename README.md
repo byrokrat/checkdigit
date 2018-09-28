@@ -27,6 +27,7 @@ Implementations include:
 
  * [`Modulo10`](/src/Modulo10.php) and [`Luhn`](/src/Luhn.php) for modulo 10 check digits
    (Luhn is simply a shorthand for Modulo10).
+ * [`Modulo11`](/src/Modulo10Gtin.php) for modulo 10 check digits variant used in GTIN barcodes.
  * [`Modulo11`](/src/Modulo11.php) for modulo 11 check digits.
  * [`Modulo97`](/src/Modulo97.php) for modulo 97 check digits.
 
