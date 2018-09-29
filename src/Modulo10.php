@@ -9,6 +9,8 @@ namespace byrokrat\checkdigit;
  */
 class Modulo10 implements Calculator
 {
+    use AssertionsTrait;
+
     /**
      * Check if the last digit of number is a valid modulo 10 check digit
      */
@@ -24,12 +26,21 @@ class Modulo10 implements Calculator
      */
     public function calculateCheckDigit(string $number): string
     {
-        if (!ctype_digit($number)) {
-            throw new InvalidStructureException(
-                "Number can only contain numerical characters, found <$number>"
-            );
+        $this->assertNumber($number);
+
+        $sum = $this->calculateSum($number);
+
+        $ceil = $sum;
+
+        while ($ceil % 10 != 0) {
+            $ceil++;
         }
 
+        return (string)($ceil-$sum);
+    }
+
+    protected function calculateSum(string $number): int
+    {
         $weight = 2;
         $sum = 0;
 
@@ -39,12 +50,6 @@ class Modulo10 implements Calculator
             $weight = ($weight == 2) ? 1 : 2;
         }
 
-        $ceil = $sum;
-
-        while ($ceil % 10 != 0) {
-            $ceil++;
-        }
-
-        return (string)($ceil-$sum);
+        return $sum;
     }
 }
