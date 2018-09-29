@@ -4,7 +4,6 @@
 [![Build Status](https://img.shields.io/travis/byrokrat/checkdigit/master.svg?style=flat-square)](https://travis-ci.org/byrokrat/checkdigit)
 [![Quality Score](https://img.shields.io/scrutinizer/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit)
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/byrokrat/checkdigit.svg?style=flat-square)](https://scrutinizer-ci.com/g/byrokrat/checkdigit/?branch=master)
-[![Dependency Status](https://img.shields.io/gemnasium/byrokrat/checkdigit.svg?style=flat-square)](https://gemnasium.com/byrokrat/checkdigit)
 
 Helper classes to calculate and validate ckecksums.
 
@@ -14,7 +13,7 @@ Installation
 composer require byrokrat/checkdigit:^2
 ```
 
-Requires the [bcmath](http://php.net/manual/en/book.bc.php) extension.
+Checkdigit requires the [bcmath](http://php.net/manual/en/book.bc.php) php extension.
 
 API
 ---
@@ -27,7 +26,7 @@ Implementations include:
 
  * [`Modulo10`](/src/Modulo10.php) and [`Luhn`](/src/Luhn.php) for modulo 10 check digits
    (Luhn is simply a shorthand for Modulo10).
- * [`Modulo11`](/src/Modulo10Gtin.php) for modulo 10 check digits variant used in GTIN barcodes.
+ * [`Modulo10Gtin`](/src/Modulo10Gtin.php) for modulo 10 check digits variant used in GTIN barcodes.
  * [`Modulo11`](/src/Modulo11.php) for modulo 11 check digits.
  * [`Modulo97`](/src/Modulo97.php) for modulo 97 check digits.
 
