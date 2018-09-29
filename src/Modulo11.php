@@ -9,6 +9,8 @@ namespace byrokrat\checkdigit;
  */
 class Modulo11 implements Calculator
 {
+    use AssertionsTrait;
+
     /**
      * @var array Map modulo 11 remainder to check digit
      */
@@ -58,9 +60,7 @@ class Modulo11 implements Calculator
      */
     public function calculateCheckDigit(string $number): string
     {
-        if (!ctype_digit($number)) {
-            throw new InvalidStructureException("Number must consist of characters 0-9");
-        }
+        $this->assertNumber($number);
 
         $sum = 0;
 
