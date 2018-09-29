@@ -1,7 +1,7 @@
 {
     "name": "byrokrat/checkdigit",
     "description": "Helper classes to calculate and validate ckecksums",
-    "keywords": ["modulo 10", "luhn", "modulo 11", "modulo 97","check digit"],
+    "keywords": ["modulo 10", "luhn", "modulo 11", "modulo 97","check digit","GTIN","EAN","UPC","ISBN"],
     "homepage": "https://github.com/byrokrat/checkdigit",
     "type": "library",
     "license": "Unlicense",
