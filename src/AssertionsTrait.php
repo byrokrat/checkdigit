@@ -7,12 +7,11 @@ namespace byrokrat\checkdigit;
 trait AssertionsTrait
 {
     /**
-     * Validate number sructure, returns number if structure is valid
+     * Assert that $number contains only numerical characters
      *
      * @throws InvalidStructureException If $number is not numerical
-     * @return void
      */
-    protected function assertNumber(string $number)
+    protected function assertNumber(string $number): void
     {
         if (!ctype_digit($number)) {
             throw new InvalidStructureException(

@@ -13,8 +13,6 @@ class Modulo97 implements Calculator
 
     /**
      * Check if the last two digits of number are valid modulo 97 check digits
-     *
-     * @throws InvalidStructureException If $number is not numerical
      */
     public function isValid(string $number): bool
     {
@@ -24,8 +22,6 @@ class Modulo97 implements Calculator
 
     /**
      * Calculate the modulo 97 check digits for number
-     *
-     * @throws InvalidStructureException If $number is not numerical
      */
     public function calculateCheckDigit(string $number): string
     {

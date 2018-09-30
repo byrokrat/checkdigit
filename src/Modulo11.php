@@ -31,8 +31,6 @@ class Modulo11 implements Calculator
 
     /**
      * Check if the last digit of number is a valid modulo 11 check digit
-     *
-     * @throws InvalidStructureException If $number is not valid
      */
     public function isValid(string $number): bool
     {
@@ -55,8 +53,6 @@ class Modulo11 implements Calculator
 
     /**
      * Calculate the modulo 11 check digit for number
-     *
-     * @throws InvalidStructureException If $number is not numerical
      */
     public function calculateCheckDigit(string $number): string
     {
@@ -75,9 +71,8 @@ class Modulo11 implements Calculator
     /**
      * Calculate weight based on position in number
      *
-     * @param  int $pos   Position in number (starts from 0)
-     * @param  int $start Start value for weight calculation (value of position 0)
-     * @return int
+     * @param int $pos   Position in number (starts from 0)
+     * @param int $start Start value for weight calculation (value of position 0)
      */
     protected function getWeight(int $pos, int $start = 1): int
     {

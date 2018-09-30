@@ -21,8 +21,6 @@ class Modulo10 implements Calculator
 
     /**
      * Calculate the modulo 10 check digit for number
-     *
-     * @throws InvalidStructureException If $number is not numerical
      */
     public function calculateCheckDigit(string $number): string
     {
