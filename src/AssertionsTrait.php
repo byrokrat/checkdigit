@@ -10,8 +10,9 @@ trait AssertionsTrait
      * Assert that $number contains only numerical characters
      *
      * @throws InvalidStructureException If $number is not numerical
+     * @return void
      */
-    protected function assertNumber(string $number): void
+    protected function assertNumber(string $number)
     {
         if (!ctype_digit($number)) {
             throw new InvalidStructureException(
