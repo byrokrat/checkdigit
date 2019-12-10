@@ -10,11 +10,11 @@ php:
   - 7.0
 
 install:
-  - composer require hanneskod/readme-tester:1.0-beta.3
+  - composer install
 
 script:
-  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then phpunit --coverage-clover=coverage.clover ; fi
-  - if [[ "$TRAVIS_PHP_VERSION" != '7.0' ]]; then phpunit ; fi
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then vendor/bin/phpunit --coverage-clover=coverage.clover ; fi
+  - if [[ "$TRAVIS_PHP_VERSION" != '7.0' ]]; then vendor/bin/phpunit ; fi
 
 after_script:
   - if [[ "$TRAVIS_PHP_VERSION" == '7.0' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
