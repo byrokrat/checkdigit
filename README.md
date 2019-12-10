@@ -10,7 +10,7 @@ Helper classes to calculate and validate ckecksums.
 Installation
 ------------
 ```shell
-composer require byrokrat/checkdigit:^2
+composer require byrokrat/checkdigit
 ```
 
 Checkdigit requires the [bcmath](http://php.net/manual/en/book.bc.php) php extension.
