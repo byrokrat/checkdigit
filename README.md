@@ -1,3 +1,5 @@
+> ABANDONED! This package is discontinued and will not be updated.
+
 # Checkdigit
 
 [![Packagist Version](https://img.shields.io/packagist/v/byrokrat/checkdigit.svg?style=flat-square)](https://packagist.org/packages/byrokrat/checkdigit)
